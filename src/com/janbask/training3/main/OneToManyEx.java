@@ -20,7 +20,7 @@ public class OneToManyEx {
             System.out.println("###One to Many Association Example###");
             Scanner scanner = new Scanner(System.in);
 
-            factory = HibernateUtil.getEntityManager();
+            factory = HibernateUtil.getEntityManagerFactory();
             manager = factory.createEntityManager();
             EmployeeGroup employeeGroup = new EmployeeGroup();
             System.out.println("\nEnter Group Name: ");

@@ -15,7 +15,7 @@ public class ManyToOneEx {
     public static void main(String[] args) {
         EntityManagerFactory factory = null;
         try {
-            factory = HibernateUtil.getEntityManager();
+            factory = HibernateUtil.getEntityManagerFactory();
             checkAndCreateCustomerTypes(factory);
             createCustomer(factory);
         }catch (Exception ex){

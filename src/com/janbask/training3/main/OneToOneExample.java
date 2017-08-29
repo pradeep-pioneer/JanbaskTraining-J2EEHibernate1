@@ -30,7 +30,7 @@ public class OneToOneExample {
             retrieveEmployess();
             System.out.println("\nEmployeeId: ");
             Integer id = scanner.nextInt();
-            factory = HibernateUtil.getEntityManager();
+            factory = HibernateUtil.getEntityManagerFactory();
             manager = factory.createEntityManager();
             Employee employee = manager.find(Employee.class, id);
             if (employee != null) {

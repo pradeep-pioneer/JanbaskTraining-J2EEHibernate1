@@ -18,7 +18,7 @@ public class HibernateJpaEx {
         emp.setRole("Project Manager");
         emp.setInsertTime(new Date());
 
-        EntityManagerFactory emf = HibernateUtil.getEntityManager();
+        EntityManagerFactory emf = HibernateUtil.getEntityManagerFactory();
         EntityManager em = emf.createEntityManager();
         EntityTransaction transaction = em.getTransaction();
         transaction.begin();

@@ -24,4 +24,24 @@
 
     </persistence-unit>
 
+    <persistence-unit name="PERSISTENCE1">
+        <description> Hibernate JPA Configuration Example</description>
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/j2ee_hibernate1_1" />
+            <property name="javax.persistence.jdbc.user" value="applicationUser" />
+            <property name="javax.persistence.jdbc.password" value="app@Passw0rd" />
+            <!--Change This to See Effect-->
+            <property name="hibernate.show_sql" value="false" />
+            <property name="hibernate.format_sql" value="true" />
+            <!--This allows you to create models and have them reflected in the database automatically-->
+            <property name="hibernate.hbm2ddl.auto" value="update" />
+
+            <property name="connection.pool_size" value="1"/>
+        </properties>
+
+    </persistence-unit>
+
 </persistence>

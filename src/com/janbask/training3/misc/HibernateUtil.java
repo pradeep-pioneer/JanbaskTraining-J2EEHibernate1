@@ -53,8 +53,12 @@ public class HibernateUtil {
         return sessionFactory;
     }
 
-    public static EntityManagerFactory getEntityManager(){
+    public static EntityManagerFactory getEntityManagerFactory(){
         return Persistence.createEntityManagerFactory("PERSISTENCE");
+    }
+
+    public static EntityManagerFactory getEntityManagerFactory1(){
+        return Persistence.createEntityManagerFactory("PERSISTENCE1");
     }
 
 }
