@@ -31,6 +31,8 @@ public class HibernateUtil {
             Configuration configuration = new Configuration();
             configuration.addClass(Employee.class);
             configuration.addResource("com/janbask/training3/model/employee.hbm.xml");
+            configuration.addResource("com/janbask/training3/model/executiveEmployee.hbm.xml");
+            configuration.addResource("com/janbask/training3/model/ehcache.xml");
             configuration.configure("hibernate.cfg.xml");
             System.out.println("Hibernate Configuration loaded");
 

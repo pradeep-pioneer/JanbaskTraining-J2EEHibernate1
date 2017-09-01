@@ -4,6 +4,7 @@
 
 <hibernate-mapping>
     <class name="com.janbask.training3.model.Employee" table="EMPLOYEE">
+        <cache usage="read-only" />
         <id name="id" type="int">
             <column name="ID" />
             <generator class="increment" />

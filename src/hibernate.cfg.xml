@@ -20,12 +20,18 @@
         <!-- Outputs the SQL queries, should be disabled in Production -->
         <property name="hibernate.show_sql">true</property>
 
+        <!--Uncomment this to enable second level cache
+        <property name="cache.provider_class">org.hibernate.cache.EhCacheProvider</property>
+        <property name="hibernate.cache.use_second_level_cache">true</property>-->
+
         <!-- Dialect is required to let Hibernate know the Database Type, MySQL, Oracle etc
             Hibernate 4 automatically figure out Dialect from Database Connection Metadata -->
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
 
         <!-- mapping file, we can use Bean annotations too -->
         <mapping resource="employee.hbm.xml" />
+        <mapping resource="executiveEmployee.hbm.xml" />
 
     </session-factory>
 </hibernate-configuration>
