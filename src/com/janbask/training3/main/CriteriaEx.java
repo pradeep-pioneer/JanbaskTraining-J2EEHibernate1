@@ -22,10 +22,10 @@ public class CriteriaEx {
         CriteriaEx ME = new CriteriaEx();
 
       /* Add few employee records in database */
-        Integer empID1 = ME.addEmployee("Zara", "Ali", 2000);
-        Integer empID2 = ME.addEmployee("Daisy", "Das", 5000);
-        Integer empID3 = ME.addEmployee("John", "Paul", 5000);
-        Integer empID4 = ME.addEmployee("Mohd", "Yasee", 3000);
+        Integer empID1 = ME.addEmployee("Zara", "Ali", 6000);
+        Integer empID2 = ME.addEmployee("Daisy", "Das", 8000);
+        Integer empID3 = ME.addEmployee("John", "Paul", 2500);
+        Integer empID4 = ME.addEmployee("Mohd", "Yasee", 1500);
 
       /* List down all the employees */
         ME.listEmployees();
@@ -67,7 +67,7 @@ public class CriteriaEx {
             tx = session.beginTransaction();
             Criteria cr = session.createCriteria(ExecutiveEmployee.class);
             // Add restriction.
-            cr.add(Restrictions.gt("salary", 2000));
+            cr.add(Restrictions.ge("salary", 2000));
             List employees = cr.list();
 
             for (Iterator iterator =
@@ -92,7 +92,7 @@ public class CriteriaEx {
         try{
             tx = session.beginTransaction();
             Criteria cr = session.createCriteria(ExecutiveEmployee.class);
-
+            cr.add(Restrictions.ge("salary", 3000));
             // To get total row count.
             cr.setProjection(Projections.rowCount());
             List rowCount = cr.list();
@@ -113,7 +113,7 @@ public class CriteriaEx {
         try{
             tx = session.beginTransaction();
             Criteria cr = session.createCriteria(ExecutiveEmployee.class);
-
+            cr.add(Restrictions.ge("salary", 5000));
             // To get total salary.
             cr.setProjection(Projections.sum("salary"));
             List totalSalary = cr.list();

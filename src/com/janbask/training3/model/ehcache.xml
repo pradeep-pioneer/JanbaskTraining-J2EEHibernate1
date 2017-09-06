@@ -7,7 +7,7 @@
             timeToLiveSeconds="200" />
 
     <cache name="com.janbask.training3.model.Employee"
-           maxElementsInMemory="100"
+           maxElementsInMemory="500"
            eternal="false"
            timeToIdleSeconds="5"
            timeToLiveSeconds="200" />

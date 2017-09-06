@@ -17,8 +17,8 @@ public class HqlEx {
         //selectClause(factory);
         //whereClause(factory);
         //orderByClause(factory);
-        //groupByClause(factory);
-        distinctKeyWord(factory);
+        groupByClause(factory);
+        //distinctKeyWord(factory);
         factory.close();
     }
 
@@ -48,9 +48,11 @@ public class HqlEx {
                 "\n*******************************************************************************************************");
         Session session = factory.getCurrentSession();
         Transaction transaction = session.beginTransaction();
-        Query query = session.createQuery("SELECT Emp.name FROM Employee Emp");
+        Query query = session.createQuery("SELECT Emp.name, Emp.role, Emp.insertTime FROM Employee Emp");
+
         for (Object item:query.getResultList()) {
-            System.out.println(item);
+            Object[] items = (Object[])item;
+            System.out.println(String.format("Name: %s\t\tRole: %s\tInserted On: %s", items[0], items[1], items[2]));
         }
         transaction.commit();
         session.close();
@@ -106,7 +108,7 @@ public class HqlEx {
     static void groupByClause(SessionFactory factory){
         System.out.println(
                 "*******************************************************************************************************" +
-                        "\n**           ORDER BY Clause Example                                                                 **" +
+                        "\n**           GROUP BY Clause Example                                                                 **" +
                         "\n*******************************************************************************************************");
         Session session = factory.getCurrentSession();
         Transaction transaction = session.beginTransaction();
